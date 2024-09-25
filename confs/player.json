@@ -1,0 +1,11 @@
+{
+    "default_image" : "Player.png",
+    "animated" : [{"name" : "player_controls",
+                   "anitype" : "PLAYER_2D",
+                   "asset" : "Player_Animated.png",
+                   "layout" : 5,
+                   "timings" : 0.05},
+                   {"name" : "player_flash_when_hit",
+                    "anitype" : "FLASH",
+                    "timings" : 0.08}]
+}

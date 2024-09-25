@@ -1,0 +1,9 @@
+{ 
+    "default_image" : "GatlingBullet1.png",
+    "mount_point": ["50%","50%"],
+    "fire_rate" : 0.150,
+    "angle_limit" : null,
+    "damage"    : 0.5,
+    "projectile_type" : "Bullet",
+    "HUD_icon"  : "turret_icon.png"
+}

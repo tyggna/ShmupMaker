@@ -1,0 +1,43 @@
+{
+    "sequence" : [
+            {
+            "name" : "enemy1.json",
+            "sprite_group" : "pawn_hostile",
+            "spawn_time" : 0.0,
+            "count" : 4,
+            "spawn_pattern" : [" x x x x "],
+            "fires" : 1.4,
+            "path_def" : "straight"
+           },
+           {
+            "name" : "enemy1.json",
+            "label": "kamakazi",
+            "sprite_group" : "pawn_hostile",
+            "spawn_time" : 3.0,
+            "count" : 1,
+            "spawn_pattern" : ["x "],
+            "fires" : 1.4,
+            "path_def" : "target"
+           },
+           {
+            "name" : "enemy1.json",
+            "sprite_group" : "pawn_hostile",
+            "spawn_time" : 4.6,
+            "count" : 4,
+            "spawn_pattern" : ["xx xx    "],
+            "fires" : 1.4,
+            "path_def" : "zigzag"
+           },
+           {
+            "name" : "enemy1.json",
+            "sprite_group" : "pawn_hostile",
+            "spawn_time" : 8.0,
+            "count" : 8,
+            "spawn_pattern" : ["    xx xx ",
+                            "x    x",
+                            "x    x"],
+            "fires" : 1.4,
+            "path_def" : "target_dummy"
+           }
+    ]
+}

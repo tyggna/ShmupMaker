@@ -1,0 +1,9 @@
+{
+    "scrap_metal" : {
+        "obtained" : "drop",
+        "use"   : "craft",
+        "icon"  : "scrapmetal_icon.png",
+        "avatar" : "scrapmetal.png",
+        "stack_size" : 256
+    }
+}

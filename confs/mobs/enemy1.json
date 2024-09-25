@@ -1,0 +1,19 @@
+{
+    "name" : "enemy1",
+    "default_image" : "Enemy1.png",
+    "animated" : [
+        {"name"    : "enemy1_flight",
+         "anitype" : "MOVEMENT_2D",
+         "asset"   : "Enemy1_Animated.png",
+         "zone"    : "Unused, but will determine what pixels are affected",
+         "layout"  : 5,
+         "timings" : 0.05}
+    ],
+    "health" : 3.0,
+    "damage" : 1.1,
+    "hit_effect" : "blink",
+    "death_animation" : "explosion.gif",
+    "score" : 10,
+    "speed" : 1,
+    "loot_table" : "t1_trash_loottable.json"
+}

@@ -1,0 +1,4 @@
+#include "defs.h"
+#include "configs.h"
+#define ShmupMaker_VERSION_MAJOR @ShmupMaker_VERSION_MAJOR@
+#define ShmupMaker_VERSION_MINOR @ShmupMaker_VERSION_MINOR@
