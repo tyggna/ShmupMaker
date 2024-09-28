@@ -23,6 +23,7 @@ FetchContent_Declare(
         argparse
         GIT_REPOSITORY https://github.com/p-ranav/argparse.git
 )
+FetchContent_MakeAvailable(argparse)
 
 add_executable(ShmupMaker main.cpp
         configs.cpp
@@ -30,7 +31,7 @@ add_executable(ShmupMaker main.cpp
         defs.h
         sprites.cpp
         sprites.h)
-target_link_libraries(${PROJECT_NAME} SDL3 SDL3_image nlohmann_json::nlohmann_json)
+target_link_libraries(${PROJECT_NAME} SDL3 SDL3_image nlohmann_json::nlohmann_json argparse)
 target_include_directories(ShmupMaker PUBLIC
         "${PROJECT_BINARY_DIR}")
 file(COPY confs DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
