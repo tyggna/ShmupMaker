@@ -25,10 +25,9 @@ namespace confs {
         return my_gameconf;
     };
 
-    json load_conf(string filename, ConfType conftype = BASE)
-    {
+    json load_conf(string filename, ConfType type = BASE) {
         string fname;
-        switch(conftype) {
+        switch(type) {
             case BASE:
                 fname = CONFDIR;
                 break;

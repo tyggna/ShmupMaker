@@ -1,17 +1,19 @@
 #include <iostream>
-#include <SDL3/SDL.h>
-#include <nlohmann/json.hpp>
+#include "SDL3/SDL.h"
+#include "nlohmann/json.hpp"
 #define SDL_MAIN_USE_CALLBACKS
-#include <SDL3/SDL_main.h>
+#include "SDL3/SDL_main.h"
 #include "ShmupMaker.h"
 #include "configs.h"
-#include <argparse/argparse.hpp>
+#include "scene.h"
+#include "argparse/argparse.hpp"
 
 using namespace std;
 SDL_Surface* _display_surf = NULL;
 SDL_Window *window = NULL;
 SDL_Renderer *renderer = NULL;
 confs::gameconf gameconf;
+vector<Scene> loaded_scenes;
 bool paused = true;
 
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]) {
@@ -41,6 +43,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]) {
                               gameconf.screen_width, gameconf.screen_height,
                               SDL_WINDOW_RESIZABLE);
     renderer = SDL_CreateRenderer(window, "renderer");
+    SDL_SetRenderDrawColor(renderer, 255,0,0,0);
     return SDL_APP_CONTINUE;
 };
 
@@ -49,7 +52,11 @@ SDL_AppResult SDL_AppIterate(void *appstate) {
     SDL_RenderPresent(renderer);
     return SDL_APP_CONTINUE;
 };
-
+void QuitGame() {
+    SDL_Event *q;
+    q->type = SDL_EVENT_QUIT;
+    SDL_PushEvent(q);
+}
 SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *e) {
     if (e->type == SDL_EVENT_QUIT) {
         return SDL_APP_FAILURE;
@@ -57,7 +64,7 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *e) {
     return SDL_APP_CONTINUE;
 };
 
-void SDL_AppQuit(void *appstate) {
+void SDL_AppQuit(void *appstate, SDL_AppResult result) {
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
 };

@@ -31,7 +31,7 @@ namespace confs{
             void parse_conf();
     };
     gameconf load_gameconf();
-    json load_conf(std::string filename);
+    json load_conf(std::string, ConfType);
 
 }
 #endif //SHMUPMAKER_CONFIGS_H
